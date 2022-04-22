@@ -1,0 +1,188 @@
+@import "scss/variables";
+*{  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $color-fondo;
+    font-family: 'Oswald', sans-serif;
+    color: $color-text;
+    width: 100%;
+}
+.contenedorPrincipal{
+    background-color: $color-fondo;
+    height: 100vh;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:"header header header header"
+                        "imagen imagen imagen imagen"
+                        "main main main main"
+                        "footer footer footer footer";
+                        .cabecera{
+                            grid-area: header;
+                            width: 100%;
+                            display: grid;
+                            margin: 0;
+                            padding: 0;
+                            top:0;
+                            z-index: 2;
+                            a img{
+                                height: 100%;
+                                width: 200px;
+                                padding-top: 0px;
+                            }
+                            .menu{
+                                width: 100%;
+                                display: grid;
+                                grid-template-columns: repeat(5, 1fr);
+                                justify-items: center;
+                                padding-left: 180px;                               
+                                li{
+                                    width: 100%;
+                                    display: grid;
+                                    top: 0;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    padding: 10px 20px 10px 20px;
+                                    font-size: medium;
+                                    color: $color-text;
+                                }
+                                a{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        main{
+                            grid-area: main;
+                        }
+                            .imagenPrincipal{
+                                grid-area: imagen;
+                                margin-top: -50px;
+                                padding-top: -60px;                             
+                                margin-bottom:0;
+                            }
+                            .ingresos{
+                                padding-top: 15px;
+                                text-align: center;
+                                color: $color-text;
+                                font-size: 50px;
+                            }
+                            .productos{
+                                display: grid;
+                                justify-content: center;
+                                height: auto;
+                                grid-template-columns: repeat(6, 1fr);
+                                width: 100%;
+                                gap: 25px;
+                                margin-top: 6vh;
+                                text-align: center;
+                                color: $color-text;
+                                div{
+                                   &:hover{
+                                    transform: scale(1.1, 1.1);
+                                    transition: 0.3s;
+                                   } 
+                                }
+                            }
+                
+                        footer{
+                            grid-area: footer;
+                            margin-top: 30px;
+                            text-align: center;
+                            color: $color-text;
+                        }
+                        iframe{ 
+                            display: grid;
+                            grid-template-columns: 1, 1fr;
+                            justify-content: center;
+                        }
+                        .encontrarnos{
+                            padding: 30px;
+                            text-align: center;
+                            color: $color-text;
+                            font-size: 50px;
+                        }
+                    }
+                    
+@media only screen and (max-width:600px){
+    *{
+        margin: 0;
+        width: 100%;
+    }
+    .contenedorPrincipal{
+        grid-template-columns: max-content;
+        grid-template-areas: "header header header header"
+                             "main main main main"
+                             "footer footer footer footer";                            
+        .imagenPrincipal{
+            display: none;
+        }                     
+        .cabecera{
+            grid-area: header;
+            height: 11rem;
+            a{
+                display: flex;
+                justify-content: center;
+                padding: 0; 
+                img{
+                    height: 100%;
+                }
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                padding: 0;
+            }
+            .menu{
+                display: flex;  
+                padding-left: 0;
+                justify-content: center;
+                li{
+                    padding-left: 0;
+                    font-size: 15px;
+                }
+            }
+        }
+        .imagenPrincipal{
+            display: none;
+        }
+        main{
+            width: 100%;
+            grid-area: main;
+            .productos{
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 50%);
+                text-align: center;
+                div{                  
+                    &:hover{
+                        transform: none;
+                    }
+                    p{
+                        font-size: 0.9rem; 
+                    }
+                }
+            }
+            .ingresos, .encontrarnos{
+                padding-top: 0;
+                font-size: 3rem;
+            }
+        }
+        iframe{
+            width: 100%;
+            padding: 0;
+            margin: 0%;
+            
+        }
+        footer{
+            grid-area: footer;
+            margin-top: 15vh;
+            margin-bottom: 0;
+        }
+        
+
+    }
+}                                       
+                                            
+
+

@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  width: 100%; }
+
+.contenedorPrincipal {
+  background-color: black;
+  height: 100vh;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header header header header" "imagen imagen imagen imagen" "main main main main" "footer footer footer footer"; }
+  .contenedorPrincipal .cabecera {
+    grid-area: header;
+    width: 100%;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 2; }
+    .contenedorPrincipal .cabecera a img {
+      height: 100%;
+      width: 200px;
+      padding-top: 0px; }
+    .contenedorPrincipal .cabecera .menu {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      justify-items: center;
+      padding-left: 180px; }
+      .contenedorPrincipal .cabecera .menu li {
+        width: 100%;
+        display: grid;
+        top: 0;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px 10px 20px;
+        font-size: medium;
+        color: white; }
+      .contenedorPrincipal .cabecera .menu a {
+        text-decoration: none; }
+  .contenedorPrincipal main {
+    grid-area: main; }
+  .contenedorPrincipal .imagenPrincipal {
+    grid-area: imagen;
+    margin-top: -50px;
+    padding-top: -60px;
+    margin-bottom: 0; }
+  .contenedorPrincipal .ingresos {
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    font-size: 50px; }
+  .contenedorPrincipal .productos {
+    display: grid;
+    justify-content: center;
+    height: auto;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    gap: 25px;
+    margin-top: 6vh;
+    text-align: center;
+    color: white; }
+    .contenedorPrincipal .productos div:hover {
+      transform: scale(1.1, 1.1);
+      transition: 0.3s; }
+  .contenedorPrincipal footer {
+    grid-area: footer;
+    margin-top: 30px;
+    text-align: center;
+    color: white; }
+  .contenedorPrincipal iframe {
+    display: grid;
+    grid-template-columns: 1, 1fr;
+    justify-content: center; }
+  .contenedorPrincipal .encontrarnos {
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 50px; }
+
+@media only screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    width: 100%; }
+  .contenedorPrincipal {
+    grid-template-columns: max-content;
+    grid-template-areas: "header header header header" "main main main main" "footer footer footer footer"; }
+    .contenedorPrincipal .imagenPrincipal {
+      display: none; }
+    .contenedorPrincipal .cabecera {
+      grid-area: header;
+      height: 11rem; }
+      .contenedorPrincipal .cabecera a {
+        display: flex;
+        justify-content: center;
+        padding: 0; }
+        .contenedorPrincipal .cabecera a img {
+          height: 100%; }
+      .contenedorPrincipal .cabecera ul {
+        display: flex;
+        justify-content: center;
+        padding: 0; }
+      .contenedorPrincipal .cabecera .menu {
+        display: flex;
+        padding-left: 0;
+        justify-content: center; }
+        .contenedorPrincipal .cabecera .menu li {
+          padding-left: 0;
+          font-size: 15px; }
+    .contenedorPrincipal .imagenPrincipal {
+      display: none; }
+    .contenedorPrincipal main {
+      width: 100%;
+      grid-area: main; }
+      .contenedorPrincipal main .productos {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        text-align: center; }
+        .contenedorPrincipal main .productos div:hover {
+          transform: none; }
+        .contenedorPrincipal main .productos div p {
+          font-size: 0.9rem; }
+      .contenedorPrincipal main .ingresos, .contenedorPrincipal main .encontrarnos {
+        padding-top: 0;
+        font-size: 3rem; }
+    .contenedorPrincipal iframe {
+      width: 100%;
+      padding: 0;
+      margin: 0%; }
+    .contenedorPrincipal footer {
+      grid-area: footer;
+      margin-top: 15vh;
+      margin-bottom: 0; } }
