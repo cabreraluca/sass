@@ -1,3 +1,8 @@
+.contenedorPrincipal .productos {
+  padding: 20px;
+  overflow: hidden;
+  text-align: center; }
+
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +13,8 @@
   width: 100%; }
 
 .contenedorPrincipal {
+  width: 100%;
+  height: auto;
   background-color: black;
   height: 100vh;
   justify-content: center;
@@ -16,7 +23,7 @@
   grid-template-areas: "header header header header" "imagen imagen imagen imagen" "main main main main" "footer footer footer footer"; }
   .contenedorPrincipal .cabecera {
     grid-area: header;
-    width: 100%;
+    width: auto;
     display: grid;
     margin: 0;
     padding: 0;
@@ -24,10 +31,10 @@
     z-index: 2; }
     .contenedorPrincipal .cabecera a img {
       height: 100%;
-      width: 200px;
+      width: 190px;
       padding-top: 0px; }
     .contenedorPrincipal .cabecera .menu {
-      width: 100%;
+      width: auto;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       justify-items: center;
@@ -49,7 +56,9 @@
     grid-area: imagen;
     margin-top: -50px;
     padding-top: -60px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: 2rem;
+    text-align: center; }
   .contenedorPrincipal .ingresos {
     padding-top: 15px;
     text-align: center;
@@ -58,9 +67,7 @@
   .contenedorPrincipal .productos {
     display: grid;
     justify-content: center;
-    height: auto;
     grid-template-columns: repeat(6, 1fr);
-    width: 100%;
     gap: 25px;
     margin-top: 6vh;
     text-align: center;
@@ -82,58 +89,41 @@
     text-align: center;
     color: white;
     font-size: 50px; }
+  .contenedorPrincipal form {
+    text-align: center; }
 
 @media only screen and (max-width: 600px) {
-  * {
-    margin: 0;
-    width: 100%; }
   .contenedorPrincipal {
-    grid-template-columns: max-content;
-    grid-template-areas: "header header header header" "main main main main" "footer footer footer footer"; }
-    .contenedorPrincipal .imagenPrincipal {
-      display: none; }
-    .contenedorPrincipal .cabecera {
-      grid-area: header;
-      height: 11rem; }
-      .contenedorPrincipal .cabecera a {
+    grid-template-columns: repeat(4, 1);
+    grid-template-areas: "header header header header" "imagen imagen imagen imagen" "main main main main" "footer footer footer footer"; }
+    .contenedorPrincipal .cabecera img {
+      height: 100%; }
+    .contenedorPrincipal .cabecera a {
+      display: flex;
+      justify-content: center;
+      padding: 0; }
+    .contenedorPrincipal .cabecera nav div ul {
+      display: flex;
+      justify-content: center; }
+      .contenedorPrincipal .cabecera nav div ul li {
+        font-size: 5px; }
+    .contenedorPrincipal .cabecera nav .menu {
+      padding-left: 0;
+      display: flex;
+      justify-content: center; }
+      .contenedorPrincipal .cabecera nav .menu a {
         display: flex;
         justify-content: center;
         padding: 0; }
-        .contenedorPrincipal .cabecera a img {
-          height: 100%; }
-      .contenedorPrincipal .cabecera ul {
-        display: flex;
-        justify-content: center;
-        padding: 0; }
-      .contenedorPrincipal .cabecera .menu {
-        display: flex;
-        padding-left: 0;
-        justify-content: center; }
-        .contenedorPrincipal .cabecera .menu li {
-          padding-left: 0;
-          font-size: 15px; }
-    .contenedorPrincipal .imagenPrincipal {
-      display: none; }
-    .contenedorPrincipal main {
-      width: 100%;
-      grid-area: main; }
-      .contenedorPrincipal main .productos {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        text-align: center; }
-        .contenedorPrincipal main .productos div:hover {
-          transform: none; }
-        .contenedorPrincipal main .productos div p {
-          font-size: 0.9rem; }
-      .contenedorPrincipal main .ingresos, .contenedorPrincipal main .encontrarnos {
-        padding-top: 0;
-        font-size: 3rem; }
-    .contenedorPrincipal iframe {
-      width: 100%;
-      padding: 0;
-      margin: 0%; }
-    .contenedorPrincipal footer {
-      grid-area: footer;
-      margin-top: 15vh;
-      margin-bottom: 0; } }
+    .contenedorPrincipal .ingresos {
+      padding-top: 0;
+      font-size: 3rem;
+      padding: 3rem; }
+    .contenedorPrincipal .productos div:hover {
+      transform: none; }
+    .contenedorPrincipal .productos {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center; }
+    .contenedorPrincipal p {
+      font-size: 2rem; } }
